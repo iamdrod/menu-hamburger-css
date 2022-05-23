@@ -1,0 +1,161 @@
+:root {
+    --height-navbar: 80px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+body {
+    background-color: #f5f5f5;
+    scroll-behavior: inherit;
+    overflow: hidden;
+}
+.container {
+    width: 100%;
+    height: var(--height-navbar);
+    background-color: #ffffff;
+    display: flex;
+    box-shadow: 0px 0px 7px 0px rgb(0 0 0 / 50%);
+}
+.container .navBar {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+.container .navBar .navArea {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.container .navBar .navArea .checkbox-action {
+    width: 40px;
+    height: 30px;
+    position: absolute;
+    background-color: aqua;
+    cursor: pointer;
+    /* FIX-ME: Por não ter uma barra de navegação real, apenas utilizo o margin */
+    margin: 0 0 0 50px;
+    z-index: 99;
+    opacity: 0;
+}
+.container .navBar .navArea .hamburger {
+    width: 40px;
+    height: 30px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* FIX-ME: Por não ter uma barra de navegação real, apenas utilizo o margin */
+    margin: 0 0 0 50px;
+    z-index: 9;
+}
+.container .navBar .navArea .hamburger .line {
+    display: block;
+    height: 4px;
+    border-radius: 10px;
+    background: #0e2431;
+    position: absolute;
+    transition: ease-in-out 300ms;
+}
+.container .navBar .navArea .hamburger .line1 {
+    width: 70%;
+    top: 3px;
+    left: 12.5%;
+}
+.container .navBar .navArea .hamburger .line2 {
+    width: 100%;
+    top: 50%;
+    margin-top: -2px;
+}
+.container .navBar .navArea .hamburger .line3 {
+    width: 70%;
+    bottom: 3px;
+    left: 12.2%;
+}
+.container .navBar .navArea .checkbox-action:checked ~ .menu-blur {
+    transform: translateX(0);
+}
+  .container .navBar .navArea .checkbox-action:checked ~ .hamburger {
+    justify-content: center;
+}
+  .container .navBar .navArea .checkbox-action:checked ~ .hamburger {
+    justify-content: center;
+}
+.container .navBar .navArea .checkbox-action:checked ~ .hamburger .line1 {
+    transform: rotate(-45deg);
+    left: -3px;
+}
+.container .navBar .navArea .checkbox-action:checked ~ .hamburger .line3 {
+    transform: rotate(45deg);
+    left: -3px;
+}
+.container .navBar .navArea .menu-blur {
+    width: 450px;
+    height: calc(100% - var(--height-navbar));
+    position: fixed;
+    top: var(--height-navbar);
+    background-color: #ffffff;
+    transform: translateX(-100%);
+    transition: ease-in-out 300ms;
+    border-top: 1px solid #dedede;
+    box-shadow: 4px 4px 4px 0px rgb(0 0 0 / 20%);
+}
+.container .navBar .navArea .menu-blur .menu {
+    width: 450px;
+    height: 100%;
+    position: absolute;
+    background-color: #ffffff;
+}
+.container .navBar .navArea .menu-blur .menu > h1,
+.container .navBar .navArea .menu-blur .menu > span {
+    color: #000;
+    padding: 30px 0 0 90px;
+}
+.container .navBar .navArea .menu-blur .menu > h1 {
+    font-weight: 900;
+    text-transform: uppercase;
+}
+.container .navBar .navArea .menu-blur .menu .menu-lists {
+    width: calc(100% - 40px);
+    height: auto;
+    padding: 20px 20px 0 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.container .navBar .navArea .menu-blur .menu .menu-lists ul.menu-list {
+    width: auto;
+    height: auto;
+    list-style: none;
+    background-color: #ffffff;
+    flex: 1;
+    padding: 0;
+}
+.container .navBar .navArea .menu-blur .menu .menu-lists ul.menu-list li.menu-item {
+    padding: 30px 20px 30px 20px;
+    cursor: pointer;
+    transition: ease-in-out 300ms;
+    text-align: center;
+    margin: 0 3px 0 3px;
+    border: 1px solid transparent;
+    border-radius: 2px;
+}
+.container .navBar .navArea .menu-blur .menu .menu-lists ul.menu-list li.menu-item > a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+}
+.container .navBar .navArea .menu-blur .menu .menu-lists ul.menu-list li.menu-item:hover {
+    background-color: #fcfcfc;
+    padding: 30px 0px 30px 40px;
+    transition: ease-in-out 300ms;
+    border: 1px solid #004eff;
+}
+.container .navBar .navArea .menu-blur .menu .menu-lists ul.menu-list li.menu-item:hover > a {
+    color: #004eff;
+}
